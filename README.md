@@ -7,7 +7,7 @@
 **Thesis chapters:** Chapter 2 (Single-Cell Transcriptome Atlas), Chapter 3 (SHPT Functional Experiments), Chapter 4 (PHPT Functional Experiments)
 **Institution:** Xiangya School of Medicine, Central South University
 **Author:** HUI Ouyang — ouyanghui950319@gmail.com
-**Status:** Thesis in preparation (2026) — code provided for reviewer reproduction and reader reference.
+**Status:** Thesis under review (2026) — code provided for reviewer reproduction and reader reference.
 
 ---
 
