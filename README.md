@@ -63,8 +63,8 @@ Ch3 and Ch4 follow the same two-file `*_Data.R` → `*_Plot.R` convention as Ch2
 | 2 | **Self bulk PHPT** | Bulk RNA-seq (NovaSeq PE150) | 12 PHPT adenomas | Independent bulk deconvolution validation | GSA (accession on publication) |
 | 3 | **Self bulk SHPT** | Bulk RNA-seq (NovaSeq PE150) | 12 SHPT glands | Independent bulk deconvolution validation | GSA (accession on publication) |
 | 4 | **PRJNA516535** | Bulk RNA-seq | 10 PHPT | Public bulk validation | SRA / NCBI BioProject PRJNA516535 |
-| 5 | GSE190773 | scRNA-seq | 2 parathyroid adenomas | External scMMR annotation test | GEO GSE190773 |
-| 6 | GSE233962 | scRNA-seq | parathyroid adenoma + normal | External scMMR annotation test | GEO GSE233962 |
+| 5 | GSE190773 | scRNA-seq | 5 PHPT + 3 Normal | External scMMR annotation test | GEO GSE190773 |
+| 6 | GSE233962 | scRNA-seq | 4 PHPT + 4 Normal (Macaca mulatta) | External scMMR annotation test | GEO GSE233962 |
 | 7 | Baron (GSE84133) | scRNA-seq | human pancreas islet | Cross-tissue benchmark for the 12-method annotation comparison | GEO GSE84133 |
 | 8 | Muraro (GSE85241) | scRNA-seq | human pancreas islet | Cross-tissue benchmark | GEO GSE85241 |
 | 9 | Segerstolpe (E-MTAB-5061) | scRNA-seq | human pancreas islet | Cross-tissue benchmark | ArrayExpress E-MTAB-5061 |
