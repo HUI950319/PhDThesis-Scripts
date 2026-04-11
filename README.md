@@ -60,7 +60,7 @@ Ch3 and Ch4 follow the same two-file `*_Data.R` → `*_Plot.R` convention as Ch2
 | # | Dataset | Assay | Species | Samples | Role in chapter | Source |
 |---|---------|-------|---------|---------|-----------------|--------|
 | 1 | **Self-Para** (this study) | 10× 3′ v3.1 scRNA-seq | Human | 15 (PHPT 6, SHPT 6, Normal 3) | Reference atlas, Benchmark, perturbation, trajectory, deconvolution reference | GSA-Human (accession on publication) |
-| 2 | **GSE190773** | 10× 3′ scRNA-seq | Human | 5 (PHPT 5) | Benchmark, PlotMAP projection, ROC/calibration, deconvolution | GEO GSE190773 |
+| 2 | **GSE190773** | 10× 3′ scRNA-seq | Human | 8 (PHPT 5, Normal 3) | Benchmark, PlotMAP projection, ROC/calibration, deconvolution | GEO GSE190773 |
 | 3 | **GSE233962** | 10× 3′ scRNA-seq | Human / M. mulatta | 8 (Human 4, Macaque 4) | Benchmark, PlotMAP projection, ROC/calibration | GEO GSE233962 (Venkat et al. 2024) |
 | 4 | **Baron** | inDrop scRNA-seq | Human | 4 donors, 8,569 cells (pancreas, non-diabetic) | Cross-tissue benchmark | scRNAseq R pkg (Baron et al. 2016) |
 | 5 | **Muraro** | CEL-Seq2 scRNA-seq | Human | 4 donors, 3,072 cells (pancreas, cadaver donors) | Cross-tissue benchmark | scRNAseq R pkg (Muraro et al. 2016) |
