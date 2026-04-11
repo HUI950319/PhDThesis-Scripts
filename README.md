@@ -57,18 +57,18 @@ Ch3 and Ch4 follow the same two-file `*_Data.R` → `*_Plot.R` convention as Ch2
 
 ## 4. Datasets used in Chapter 2
 
-| # | Dataset | Assay | Samples | Role in chapter | Source |
-|---|---------|-------|---------|-----------------|--------|
-| 1 | **ParaDataset** (this study) | 10× 3′ v3.1 scRNA-seq | 15 (PHPT ×6, SHPT ×6, Normal ×3) | Discovery reference atlas; 170,852 cells after QC | GSA-Human (accession on publication) |
-| 2 | **Self bulk PHPT** | Bulk RNA-seq (NovaSeq PE150) | 12 PHPT adenomas | Independent bulk deconvolution validation | GSA (accession on publication) |
-| 3 | **Self bulk SHPT** | Bulk RNA-seq (NovaSeq PE150) | 12 SHPT glands | Independent bulk deconvolution validation | GSA (accession on publication) |
-| 4 | **PRJNA516535** | Bulk RNA-seq | 10 PHPT | Public bulk validation | SRA / NCBI BioProject PRJNA516535 |
-| 5 | GSE190773 | scRNA-seq | 5 PHPT + 3 Normal | External scMMR annotation test | GEO GSE190773 |
-| 6 | GSE233962 | scRNA-seq | 4 PHPT + 4 Normal (Macaca mulatta) | External scMMR annotation test | GEO GSE233962 |
-| 7 | Baron (GSE84133) | scRNA-seq | human pancreas islet | Cross-tissue benchmark for the 12-method annotation comparison | GEO GSE84133 |
-| 8 | Muraro (GSE85241) | scRNA-seq | human pancreas islet | Cross-tissue benchmark | GEO GSE85241 |
-| 9 | Segerstolpe (E-MTAB-5061) | scRNA-seq | human pancreas islet | Cross-tissue benchmark | ArrayExpress E-MTAB-5061 |
-| 10 | Xin (GSE81608) | scRNA-seq | human pancreas islet | Cross-tissue benchmark | GEO GSE81608 |
+| # | Dataset | Assay | Species | Samples | Role in chapter | Source |
+|---|---------|-------|---------|---------|-----------------|--------|
+| 1 | **Self-Para** (this study) | 10× 3′ v3.1 scRNA-seq | Human | 15 (PHPT 6, SHPT 6, Normal 3) | Reference atlas, Benchmark, perturbation, trajectory, deconvolution reference | GSA-Human (accession on publication) |
+| 2 | **GSE190773** | 10× 3′ scRNA-seq | Human | 5 (PHPT 5) | Benchmark, PlotMAP projection, ROC/calibration, deconvolution | GEO GSE190773 |
+| 3 | **GSE233962** | 10× 3′ scRNA-seq | Human / M. mulatta | 8 (Human 4, Macaque 4) | Benchmark, PlotMAP projection, ROC/calibration | GEO GSE233962 (Venkat et al. 2024) |
+| 4 | **Baron** | inDrop scRNA-seq | Human | 4 donors, 8,569 cells (pancreas, non-diabetic) | Cross-tissue benchmark | scRNAseq R pkg (Baron et al. 2016) |
+| 5 | **Muraro** | CEL-Seq2 scRNA-seq | Human | 4 donors, 3,072 cells (pancreas, cadaver donors) | Cross-tissue benchmark | scRNAseq R pkg (Muraro et al. 2016) |
+| 6 | **Segerstolpe** | Smart-Seq2 scRNA-seq | Human | 10 donors, 3,514 cells (pancreas, 6 healthy + 4 T2D) | Cross-tissue benchmark | scRNAseq R pkg (Segerstolpe et al. 2016) |
+| 7 | **Xin** | Fluidigm C1 scRNA-seq | Human | 18 donors, 1,600 cells (pancreas, 12 non-diabetic + 6 T2D) | Cross-tissue benchmark | scRNAseq R pkg (Xin et al. 2016) |
+| 8 | **Self-PHPT-Bulk** | Bulk RNA-seq (NovaSeq PE150) | Human | 12 (PHPT 12, with tumour size and PTH) | Deconvolution and clinical correlation, BayesPrism validation | GSA (accession on publication) |
+| 9 | **Self-SHPT-Bulk** | Bulk RNA-seq (NovaSeq PE150) | Human | 12 (SHPT 12, with tumour size and PTH) | Deconvolution and clinical correlation, BayesPrism validation | GSA (accession on publication) |
+| 10 | **PRJNA516535** | Bulk RNA-seq (HiSeq 2500) | Human | 10 (PHPT adenoma 10, with clinical info) | External deconvolution validation, BayesPrism validation | NCBI SRA / GSE125433 (He et al. 2019) |
 
 **Sample provenance.** All parathyroid samples were collected at Xiangya Hospital of Central South University between 2023 and 2025. PHPT samples were solitary adenomas removed during curative parathyroidectomy; SHPT samples came from end-stage renal-disease patients undergoing total parathyroidectomy with forearm autotransplantation; Normal samples were histologically normal parathyroid glands incidentally resected during thyroid lobectomy. Libraries were prepared with the 10× Chromium Next GEM Single Cell 3′ Kit v3.1 (PN-1000268) and sequenced on Illumina NovaSeq 6000 PE150 by OE Biotech (Shanghai). Bulk libraries were prepared and sequenced on the same platform.
 
