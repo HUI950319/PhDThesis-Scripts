@@ -1,0 +1,30 @@
+# SCENIC Pipeline Configuration File
+# 全局参数
+[global]
+# human 或 mouse
+species = human  
+output_path = output/test
+
+# 预处理参数 (preprocess.R)
+[preprocess]
+# rscript_path = /opt/R/4.4.2/bin/Rscript
+rscript_path = Rscript
+input_file = input/ifnb_pbmc.seurat.rds
+n_cells = 2000
+threads = 5
+k = 100
+min_cells_per_gene = 10
+
+# pySCENIC参数 (run_pyscenic.py)
+[pyscenic]
+num_workers = 10
+seed = 777
+min_regulon_size = 10
+
+# AUCell参数 (run_aucell.R)
+[aucell]
+## AUCell和UCell
+method = AUCell
+min_size = 10
+batch_size = 500
+cores = 10 

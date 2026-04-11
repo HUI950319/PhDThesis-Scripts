@@ -1,0 +1,59 @@
+# ============================================================
+# Local backups / safety snapshots (never commit)
+# ============================================================
+backup_prefix_*/
+backup_fixbugs_*/
+*.bak
+*.bak_*
+*_backup_before_*/
+~$*
+
+# ============================================================
+# SCENIC / cisTarget reference databases (>100 MB, see DOWNLOAD.md)
+# ============================================================
+00_scenic_pipe/cistarget/*.feather
+00_scenic_pipe/cistarget/*.tbl
+
+# ============================================================
+# Large intermediate / result files (should live outside the repo)
+# ============================================================
+*.rds
+*.RData
+*.h5ad
+*.h5
+*.loom
+*.bam
+*.bai
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+# ============================================================
+# R / RStudio
+# ============================================================
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ============================================================
+# OS / editor junk
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
