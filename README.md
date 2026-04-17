@@ -42,7 +42,9 @@ PhDThesis-Scripts/
 ├── Ch2_Fig02_20_Visualization/   # R scripts that draw every figure in Chapter 2 (Fig 2-2 through Fig 2-20)
 ├── Ch3_Fig21_24_SHPT/            # R scripts for Chapter 3 figures (SHPT gene screening, GSEA, pathway analysis)
 ├── Ch4_Fig25_29_PHPT/            # R scripts for Chapter 4 figures (PHPT gene screening, GSEA, pathway, CellChat)
-├── .gitignore                    # ignores *.rds / *.h5ad / *.bam / backup_* / cisTarget references / IDE junk
+├── figures_thumb/                # 28 PNG thumbnails (Fig2-2.png … Fig4-29.png, ~600 px wide) embedded in §5 tables
+├── Figures/                      # Full-resolution figure PDFs (not tracked; generated locally by the *_Plot.R scripts)
+├── .gitignore                    # ignores *.rds / *.h5ad / *.bam / backup_* / cisTarget references / Figures/ / IDE junk
 └── README.md                     # this file
 ```
 
