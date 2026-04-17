@@ -15,6 +15,12 @@ backup_fixbugs_*/
 00_scenic_pipe/cistarget/*.tbl
 
 # ============================================================
+# Full-resolution figure PDFs (only PNG thumbnails are tracked)
+# ============================================================
+Figures/
+convert_figures.py
+
+# ============================================================
 # Large intermediate / result files (should live outside the repo)
 # ============================================================
 *.rds

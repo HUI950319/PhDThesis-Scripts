@@ -80,50 +80,50 @@ Ch3 and Ch4 follow the same two-file `*_Data.R` → `*_Plot.R` convention as Ch2
 
 The table below links every thesis figure to the script that produces it and the biological message conveyed by that figure. Script paths are relative to `Ch2_Fig02_20_Visualization/`.
 
-| Figure | Script(s) | What it shows |
-|--------|-----------|----------------|
-| Fig 2-2 | `Fig02_QualityControl.R` | Per-sample QC: nFeature_RNA, nCount_RNA, percent.mt violin plots; DoubletFinder doublet calls; decontX ambient-RNA contamination score. Cells passing all filters (200–10,000 features, 1,000–50,000 UMIs, <40% mt, non-doublet, decontX <0.5) advance to integration. |
-| Fig 2-3 | `Fig03_CellType.R` | UMAP of the full 170,852-cell integrated reference coloured by the 16 annotated cell types, accompanied by a marker-gene dot/heatmap panel. |
-| Fig 2-4 | `Fig04_Benchmark.R` + `Fig04_Benchmark_Plot.R` | Accuracy / Macro-F1 benchmark of 12 annotation methods (XGBoost, RF, SVM, Elastic-Net, LDA, Naive Bayes, KNN, NNET, SingleR, Seurat Label Transfer, CellTypist, **scMMR**) on 7 datasets under 10 × 10-fold stratified CV. scMMR ranks first on both metrics (>0.95 / >0.90). |
-| Fig 2-5 | `Fig05_EvalEmbedding_Data.R` + `Fig05_EvalEmbedding_Plot.R` | Silhouette score and standardized pairwise distance for scMMR 512-d embeddings vs. PCA embeddings — scMMR yields tighter and better-separated clusters. |
-| Fig 2-6 | `Fig06_ROC_Calibration_Data.R` + `Fig06_ROC_Calibration_Plot.R` | Macro-averaged ROC and per-class AUC on the in-house reference (AUC 0.9961, Acc 0.9925), GSE190773 (Acc 0.9774) and GSE233962 (Acc 0.9655). |
-| Fig 2-7 | `Fig07_08_Data.R` + `Fig07_PlotMAP_Plot.R` | Projection of GSE190773 and GSE233962 cells onto the reference UMAP using scMMR's `PlotMAP` module. |
-| Fig 2-8 | `Fig07_08_Data.R` + `Fig08_QC_Scatter_Plot.R` | Pearson correlation between scMMR prediction-confidence and DecontX contamination (r = −0.577 and −0.443) — low-confidence cells are the ambient-contaminated ones. |
-| Fig 2-9 | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | Cell-type-specific gene importance via Integrated Gradients: PTH and CASR dominate parathyroid cells; CD3D / CD3E dominate T cells; consistent with canonical markers. |
-| Fig 2-10 | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | KEGG pathway importance aggregated from IG scores — parathyroid hormone synthesis / calcium signaling are the top parathyroid pathways. |
-| Fig 2-11 | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | Transcription-factor importance (IG on pySCENIC regulon activity): GCM2 and MAFB are ranked highest for parathyroid cells; TCF7 / LEF1 for T cells. |
-| Fig 2-12 | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | Alluvial plot of cell-type composition across Normal / PHPT / SHPT, with parathyroid epithelial fractions 57.1 % / 71.4 % / 73.8 %. |
-| Fig 2-13 | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | miloR differential-abundance neighbourhoods correlated with scMMR `RankPercent` proportion perturbations (Spearman ρ = 0.859) — two independent methods agree. |
-| Fig 2-14 | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | scMMR `RankPerturbation` expression-perturbation scores vs. Augur cell-type prioritization — parathyroid cells are the top-perturbed population in both diseases. |
-| Fig 2-15 | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | PHPT vs. SHPT perturbation correlation (rs = 0.724 for proportion, 0.657 for expression) — shared and distinct disease programs. |
-| Fig 2-16 | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | Monocle3 pseudotime tree overlaid with scVelo RNA-velocity arrows; three lineages emerge: Lineage 1 Normal-dominant, Lineage 2 SHPT-dominant, Lineage 3 PHPT-dominant. |
-| Fig 2-17 | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | CytoTRACE2 developmental potential jointly cross-validated against Monocle3 pseudotime and velocity latent-time — all three orderings agree along each lineage. |
-| Fig 2-18 | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | CASR / VDR expression decreases and PTH expression increases along SHPT and PHPT pseudotime lineages — the transcriptional signature of the clinical disease phenotype. |
-| Fig 2-19 | `Fig19_ClinicalCorrelation_Data.R` + `Fig19_ClinicalCorrelation_Plot.R` | PHPT Cluster 3 fraction correlates with tumour size (R = 0.667, P = 2.28 × 10⁻⁵) and serum PTH (R = 0.694, P = 7.42 × 10⁻⁶); SHPT Cluster 2 fraction correlates with tumour size (R = 0.738, P = 4.67 × 10⁻⁴) and PTH (R = 0.539, P = 0.021). |
-| Fig 2-20 | `Fig20_BayesPrism_Data.R` + `Fig20_BayesPrism_Validation_Plot.R` | Independent BayesPrism deconvolution of 12 self + 10 public PHPT bulks and 12 self SHPT bulks confirms scMMR's cluster-fraction estimates (PHPT C3 R = 0.901, P = 1.1 × 10⁻⁸; SHPT C2 R = 0.928, P = 1.33 × 10⁻⁵). |
+| Figure | Preview | Script(s) | What it shows |
+|--------|---------|-----------|----------------|
+| Fig 2-2 | <img src="figures_thumb/Fig2-2.png" width="250"> | `Fig02_QualityControl.R` | Per-sample QC: nFeature_RNA, nCount_RNA, percent.mt violin plots; DoubletFinder doublet calls; decontX ambient-RNA contamination score. Cells passing all filters (200–10,000 features, 1,000–50,000 UMIs, <40% mt, non-doublet, decontX <0.5) advance to integration. |
+| Fig 2-3 | <img src="figures_thumb/Fig2-3.png" width="250"> | `Fig03_CellType.R` | UMAP of the full 170,852-cell integrated reference coloured by the 16 annotated cell types, accompanied by a marker-gene dot/heatmap panel. |
+| Fig 2-4 | <img src="figures_thumb/Fig2-4.png" width="250"> | `Fig04_Benchmark.R` + `Fig04_Benchmark_Plot.R` | Accuracy / Macro-F1 benchmark of 12 annotation methods (XGBoost, RF, SVM, Elastic-Net, LDA, Naive Bayes, KNN, NNET, SingleR, Seurat Label Transfer, CellTypist, **scMMR**) on 7 datasets under 10 × 10-fold stratified CV. scMMR ranks first on both metrics (>0.95 / >0.90). |
+| Fig 2-5 | <img src="figures_thumb/Fig2-5.png" width="250"> | `Fig05_EvalEmbedding_Data.R` + `Fig05_EvalEmbedding_Plot.R` | Silhouette score and standardized pairwise distance for scMMR 512-d embeddings vs. PCA embeddings — scMMR yields tighter and better-separated clusters. |
+| Fig 2-6 | <img src="figures_thumb/Fig2-6.png" width="250"> | `Fig06_ROC_Calibration_Data.R` + `Fig06_ROC_Calibration_Plot.R` | Macro-averaged ROC and per-class AUC on the in-house reference (AUC 0.9961, Acc 0.9925), GSE190773 (Acc 0.9774) and GSE233962 (Acc 0.9655). |
+| Fig 2-7 | <img src="figures_thumb/Fig2-7.png" width="250"> | `Fig07_08_Data.R` + `Fig07_PlotMAP_Plot.R` | Projection of GSE190773 and GSE233962 cells onto the reference UMAP using scMMR's `PlotMAP` module. |
+| Fig 2-8 | <img src="figures_thumb/Fig2-8.png" width="250"> | `Fig07_08_Data.R` + `Fig08_QC_Scatter_Plot.R` | Pearson correlation between scMMR prediction-confidence and DecontX contamination (r = −0.577 and −0.443) — low-confidence cells are the ambient-contaminated ones. |
+| Fig 2-9 | <img src="figures_thumb/Fig2-9.png" width="250"> | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | Cell-type-specific gene importance via Integrated Gradients: PTH and CASR dominate parathyroid cells; CD3D / CD3E dominate T cells; consistent with canonical markers. |
+| Fig 2-10 | <img src="figures_thumb/Fig2-10.png" width="250"> | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | KEGG pathway importance aggregated from IG scores — parathyroid hormone synthesis / calcium signaling are the top parathyroid pathways. |
+| Fig 2-11 | <img src="figures_thumb/Fig2-11.png" width="250"> | `Fig09_11_Interpretation_Data.R` + `Fig09_11_Interpretation_Plot.R` | Transcription-factor importance (IG on pySCENIC regulon activity): GCM2 and MAFB are ranked highest for parathyroid cells; TCF7 / LEF1 for T cells. |
+| Fig 2-12 | <img src="figures_thumb/Fig2-12.png" width="250"> | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | Alluvial plot of cell-type composition across Normal / PHPT / SHPT, with parathyroid epithelial fractions 57.1 % / 71.4 % / 73.8 %. |
+| Fig 2-13 | <img src="figures_thumb/Fig2-13.png" width="250"> | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | miloR differential-abundance neighbourhoods correlated with scMMR `RankPercent` proportion perturbations (Spearman ρ = 0.859) — two independent methods agree. |
+| Fig 2-14 | <img src="figures_thumb/Fig2-14.png" width="250"> | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | scMMR `RankPerturbation` expression-perturbation scores vs. Augur cell-type prioritization — parathyroid cells are the top-perturbed population in both diseases. |
+| Fig 2-15 | <img src="figures_thumb/Fig2-15.png" width="250"> | `Fig12_15_Perturbation_Data.R` + `Fig12_15_Perturbation_Plot.R` | PHPT vs. SHPT perturbation correlation (rs = 0.724 for proportion, 0.657 for expression) — shared and distinct disease programs. |
+| Fig 2-16 | <img src="figures_thumb/Fig2-16.png" width="250"> | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | Monocle3 pseudotime tree overlaid with scVelo RNA-velocity arrows; three lineages emerge: Lineage 1 Normal-dominant, Lineage 2 SHPT-dominant, Lineage 3 PHPT-dominant. |
+| Fig 2-17 | <img src="figures_thumb/Fig2-17.png" width="250"> | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | CytoTRACE2 developmental potential jointly cross-validated against Monocle3 pseudotime and velocity latent-time — all three orderings agree along each lineage. |
+| Fig 2-18 | <img src="figures_thumb/Fig2-18.png" width="250"> | `Fig16_18_Trajectory_Data.R` + `Fig16_18_Trajectory_Plot.R` | CASR / VDR expression decreases and PTH expression increases along SHPT and PHPT pseudotime lineages — the transcriptional signature of the clinical disease phenotype. |
+| Fig 2-19 | <img src="figures_thumb/Fig2-19.png" width="250"> | `Fig19_ClinicalCorrelation_Data.R` + `Fig19_ClinicalCorrelation_Plot.R` | PHPT Cluster 3 fraction correlates with tumour size (R = 0.667, P = 2.28 × 10⁻⁵) and serum PTH (R = 0.694, P = 7.42 × 10⁻⁶); SHPT Cluster 2 fraction correlates with tumour size (R = 0.738, P = 4.67 × 10⁻⁴) and PTH (R = 0.539, P = 0.021). |
+| Fig 2-20 | <img src="figures_thumb/Fig2-20.png" width="250"> | `Fig20_BayesPrism_Data.R` + `Fig20_BayesPrism_Validation_Plot.R` | Independent BayesPrism deconvolution of 12 self + 10 public PHPT bulks and 12 self SHPT bulks confirms scMMR's cluster-fraction estimates (PHPT C3 R = 0.901, P = 1.1 × 10⁻⁸; SHPT C2 R = 0.928, P = 1.33 × 10⁻⁵). |
 
 ## 5b. Chapter 3 figure index (SHPT functional experiments)
 
 Scripts are in `Ch3_Fig21_24_SHPT/`. The shared gene-list dependency is in `00_GeneList/Fig23_ProlifGeneList_Data.R`.
 
-| Figure | Script(s) | What it shows |
-|--------|-----------|----------------|
-| Fig 3-21 | `Fig21_22_GeneScreening_Data.R` + `Fig21_VolcanoVenn_Plot.R` | Differential gene screening between SHPT and Normal parathyroid cells: volcano plot of DEGs and Venn diagram of overlap with proliferation-related genes. |
-| Fig 3-22 | `Fig21_22_GeneScreening_Data.R` + `Fig22_GeneValidation_Plot.R` | Gene validation: expression-level box/violin plots of selected proliferation-related DEGs across SHPT vs Normal, with statistical comparisons. |
-| Fig 3-23 | `Fig23_GSEA_Data.R` + `Fig23_GSEA_Plot.R` | GSEA enrichment analysis of 34 proliferation-related pathways (Hallmark + KEGG_LEGACY + Reactome/WikiPathways supplements) in SHPT vs Normal. |
-| Fig 3-24 | `Fig21_22_GeneScreening_Data.R` + `Fig24_PathwayAnalysis_Plot.R` | Pathway activity scoring: AUCell-based pathway activity across parathyroid cell clusters, showing enrichment of proliferation pathways in SHPT-specific subpopulations. |
+| Figure | Preview | Script(s) | What it shows |
+|--------|---------|-----------|----------------|
+| Fig 3-21 | <img src="figures_thumb/Fig3-21.png" width="250"> | `Fig21_22_GeneScreening_Data.R` + `Fig21_VolcanoVenn_Plot.R` | Differential gene screening between SHPT and Normal parathyroid cells: volcano plot of DEGs and Venn diagram of overlap with proliferation-related genes. |
+| Fig 3-22 | <img src="figures_thumb/Fig3-22.png" width="250"> | `Fig21_22_GeneScreening_Data.R` + `Fig22_GeneValidation_Plot.R` | Gene validation: expression-level box/violin plots of selected proliferation-related DEGs across SHPT vs Normal, with statistical comparisons. |
+| Fig 3-23 | <img src="figures_thumb/Fig3-23.png" width="250"> | `Fig23_GSEA_Data.R` + `Fig23_GSEA_Plot.R` | GSEA enrichment analysis of 34 proliferation-related pathways (Hallmark + KEGG_LEGACY + Reactome/WikiPathways supplements) in SHPT vs Normal. |
+| Fig 3-24 | <img src="figures_thumb/Fig3-24.png" width="250"> | `Fig21_22_GeneScreening_Data.R` + `Fig24_PathwayAnalysis_Plot.R` | Pathway activity scoring: AUCell-based pathway activity across parathyroid cell clusters, showing enrichment of proliferation pathways in SHPT-specific subpopulations. |
 
 ## 5c. Chapter 4 figure index (PHPT functional experiments)
 
 Scripts are in `Ch4_Fig25_29_PHPT/`. The shared gene-list dependency is in `00_GeneList/Fig23_ProlifGeneList_Data.R`.
 
-| Figure | Script(s) | What it shows |
-|--------|-----------|----------------|
-| Fig 4-25 | `Fig25_26_GeneScreening_Data.R` + `Fig25_VolcanoVenn_Plot.R` | Differential gene screening between PHPT and Normal parathyroid cells: volcano plot and Venn diagram with proliferation gene overlap. |
-| Fig 4-26 | `Fig25_26_GeneScreening_Data.R` + `Fig26_GeneValidation_Plot.R` | Gene validation: expression-level plots of selected proliferation-related DEGs across PHPT vs Normal. |
-| Fig 4-27 | `Fig27_GSEA_Data.R` + `Fig27_GSEA_Plot.R` | GSEA enrichment of 34 proliferation-related pathways in PHPT vs Normal parathyroid cells. |
-| Fig 4-28 | `Fig25_26_GeneScreening_Data.R` + `Fig28_PathwayAnalysis_Plot.R` | Pathway activity scoring via AUCell across parathyroid cell clusters in PHPT. |
-| Fig 4-29 | `Fig29_CellChat_Data.R` + `Fig29_CellChat_Plot.R` | CellChat cell-cell communication analysis: ligand-receptor interaction networks across cell types in PHPT, including signaling pathway comparison between PHPT and Normal, and visualization of disease-specific communication patterns. |
+| Figure | Preview | Script(s) | What it shows |
+|--------|---------|-----------|----------------|
+| Fig 4-25 | <img src="figures_thumb/Fig4-25.png" width="250"> | `Fig25_26_GeneScreening_Data.R` + `Fig25_VolcanoVenn_Plot.R` | Differential gene screening between PHPT and Normal parathyroid cells: volcano plot and Venn diagram with proliferation gene overlap. |
+| Fig 4-26 | <img src="figures_thumb/Fig4-26.png" width="250"> | `Fig25_26_GeneScreening_Data.R` + `Fig26_GeneValidation_Plot.R` | Gene validation: expression-level plots of selected proliferation-related DEGs across PHPT vs Normal. |
+| Fig 4-27 | <img src="figures_thumb/Fig4-27.png" width="250"> | `Fig27_GSEA_Data.R` + `Fig27_GSEA_Plot.R` | GSEA enrichment of 34 proliferation-related pathways in PHPT vs Normal parathyroid cells. |
+| Fig 4-28 | <img src="figures_thumb/Fig4-28.png" width="250"> | `Fig25_26_GeneScreening_Data.R` + `Fig28_PathwayAnalysis_Plot.R` | Pathway activity scoring via AUCell across parathyroid cell clusters in PHPT. |
+| Fig 4-29 | <img src="figures_thumb/Fig4-29.png" width="250"> | `Fig29_CellChat_Data.R` + `Fig29_CellChat_Plot.R` | CellChat cell-cell communication analysis: ligand-receptor interaction networks across cell types in PHPT, including signaling pathway comparison between PHPT and Normal, and visualization of disease-specific communication patterns. |
 
 ## 5d. Shared upstream: proliferation gene list
 
